@@ -21,13 +21,22 @@
             document.body.appendChild(element);
         })
 
-        // ASSIGNMENT
+        // ASSIGNMENT write a fuction that takes an array and turns content into all caps
         let arrayText = ['hello', 'madam', 'youre', 'having','a friend'];
         let upperText = [];
         arrayText.forEach(function (changeWord2upper){
             upperText.push(changeWord2upper.toUpperCase());
         }) 
         console.log(upperText);
+
+        // ASSIGNMENT write a fuction that takes an array and repeats its content twice
+        let arrayText2 = ['hello', 'madam', 'youre', 'having','a friend'];
+        let doubleArray = [];
+        arrayText2.forEach(function(double){
+            doubleArray.push(double);
+            doubleArray.push(double);
+        })
+        console.log(doubleArray);
 
     </script>
 </body>
