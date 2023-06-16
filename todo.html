@@ -10,7 +10,12 @@
     <input type="text" id="input-text" />
     <button onclick="addTodo()" >Press Me</button>
 
+    <!-- ASSIGNMENT -->
     <button id="todo-button" onclick="buttonClicked()"></button>
+    <br>
+    <div id="counter">0</div>
+    <button id="increase" onclick="upClicked()">UP</button>
+
     <script>
 
         let todos = ['Get groceries', 'Wash Car', 'Make Dinner'];
@@ -62,6 +67,14 @@
         function buttonClicked(){
             let buttonText = document.getElementById('todo-button');
             buttonText.innerText = "Done";
+        }
+
+        //ASSIGNMENT counter app
+        let count = 0;
+        let counter = document.getElementById('counter');
+        function upClicked(){
+            count += 1;
+            counter.innerText = count;
         }
     </script>
 </body>
