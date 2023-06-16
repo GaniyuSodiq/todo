@@ -7,7 +7,8 @@
     <title>Todo</title>
 </head>
 <body>
-    <button>Press Me</button>
+    <input type="text" id="input-text" />
+    <button onclick="addTodo()" >Press Me</button>
 
     <script>
 
@@ -20,6 +21,16 @@
             element.innerText = todoTitle;
             document.body.appendChild(element);
         })
+
+        function addTodo(){
+            let textbox = document.getElementById('input-text');
+            let todotitle = textbox.value;
+            todos.push(todotitle);
+        }
+
+
+
+
 
         // ASSIGNMENT write a fuction that takes an array and turns content into all caps
         let arrayText = ['hello', 'madam', 'youre', 'having','a friend'];
