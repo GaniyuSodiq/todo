@@ -10,6 +10,7 @@
     <input type="text" id="input-text" />
     <button onclick="addTodo()" >Press Me</button>
 
+    <button id="todo-button" onclick="buttonClicked()"></button>
     <script>
 
         let todos = ['Get groceries', 'Wash Car', 'Make Dinner'];
@@ -56,6 +57,12 @@
             total += number;
         })
         console.log(total);
+
+        // ASSIGNMENT a button text that changes when clicked
+        function buttonClicked(){
+            let buttonText = document.getElementById('todo-button');
+            buttonText.innerText = "Done";
+        }
     </script>
 </body>
 </html>
