@@ -15,6 +15,7 @@
     <br>
     <div id="counter">0</div>
     <button id="increase" onclick="upClicked()">UP</button>
+    <button id="decrease" onclick="downClicked()">DOWN</button>
 
     <script>
 
@@ -74,6 +75,10 @@
         let counter = document.getElementById('counter');
         function upClicked(){
             count += 1;
+            counter.innerText = count;
+        }
+        function downClicked(){
+            count -= 1;
             counter.innerText = count;
         }
     </script>
