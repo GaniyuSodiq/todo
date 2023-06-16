@@ -12,8 +12,10 @@
     <input type="text" id="input-text" />
     <button onclick="addTodo()">Press Me</button>
 
+    <div id="todo-list"></div>
+
     <!-- ASSIGNMENT -->
-    <button id="todo-button" onclick="buttonClicked()"></button>
+    <!-- <button id="todo-button" onclick="buttonClicked()"></button>
     <br>
     <hr>
     <div id="counter">0</div>
@@ -22,7 +24,7 @@
     <br>
     <hr>
     <input type="text" id="collect-todo" />
-    <button id="display-todo" onclick="displayMytodo()">MY TODO</button>
+    <button id="display-todo" onclick="displayMytodo()">MY TODO</button> -->
 
     <script>
 
@@ -30,80 +32,86 @@
         todos.push('Another todo');
         console.log(todos);
 
-        todos.forEach(function (todoTitle) {
-            let element = document.createElement('div');
-            element.innerText = todoTitle;
-            document.body.appendChild(element);
-        })
-
+        render();
+        
         function addTodo() {
             let textbox = document.getElementById('input-text');
             let todotitle = textbox.value;
             todos.push(todotitle);
+            render();
+        }
+
+        function render(){
+                //reset our list
+                todos.forEach(function (todoTitle) {
+                let element = document.createElement('div');
+                element.innerText = todoTitle;
+                let todoList = document.getElementById('todo-list')
+                todoList.appendChild(element);
+            })
         }
 
 
 
 
+        // // ASSIGNMENT write a fuction that takes an array and turns content into all caps
+        // let arrayText = ['hello', 'madam', 'youre', 'having', 'a friend'];
+        // let upperText = [];
+        // arrayText.forEach(function (changeWord2upper) {
+        //     upperText.push(changeWord2upper.toUpperCase());
+        // })
+        // console.log(upperText);
 
-        // ASSIGNMENT write a fuction that takes an array and turns content into all caps
-        let arrayText = ['hello', 'madam', 'youre', 'having', 'a friend'];
-        let upperText = [];
-        arrayText.forEach(function (changeWord2upper) {
-            upperText.push(changeWord2upper.toUpperCase());
-        })
-        console.log(upperText);
+        // // ASSIGNMENT write a fuction that takes an array and repeats its content twice
+        // let arrayText2 = ['hello', 'madam', 'youre', 'having', 'a friend'];
+        // let doubleArray = [];
+        // arrayText2.forEach(function (double) {
+        //     doubleArray.push(double);
+        //     doubleArray.push(double);
+        // })
+        // console.log(doubleArray);
 
-        // ASSIGNMENT write a fuction that takes an array and repeats its content twice
-        let arrayText2 = ['hello', 'madam', 'youre', 'having', 'a friend'];
-        let doubleArray = [];
-        arrayText2.forEach(function (double) {
-            doubleArray.push(double);
-            doubleArray.push(double);
-        })
-        console.log(doubleArray);
+        // // ASSIGNMENT write a fuction that summ the content of an array
+        // let numberArray = [1, 2, 3, 4];
+        // let total = 0;
+        // numberArray.forEach(function (number) {
+        //     total += number;
+        // })
+        // console.log(total);
 
-        // ASSIGNMENT write a fuction that summ the content of an array
-        let numberArray = [1, 2, 3, 4];
-        let total = 0;
-        numberArray.forEach(function (number) {
-            total += number;
-        })
-        console.log(total);
+        // // ASSIGNMENT a button text that changes when clicked
+        // function buttonClicked() {
+        //     let buttonText = document.getElementById('todo-button');
+        //     buttonText.innerText = "Done";
+        // }
 
-        // ASSIGNMENT a button text that changes when clicked
-        function buttonClicked() {
-            let buttonText = document.getElementById('todo-button');
-            buttonText.innerText = "Done";
-        }
+        // //ASSIGNMENT counter app
+        // let count = 0;
+        // let counter = document.getElementById('counter');
+        // function upClicked() {
+        //     count += 1;
+        //     counter.innerText = count;
+        // }
+        // function downClicked() {
+        //     count -= 1;
+        //     counter.innerText = count;
+        // }
 
-        //ASSIGNMENT counter app
-        let count = 0;
-        let counter = document.getElementById('counter');
-        function upClicked() {
-            count += 1;
-            counter.innerText = count;
-        }
-        function downClicked() {
-            count -= 1;
-            counter.innerText = count;
-        }
-
-        //ASSIGNMENT take whats inside textbox and add display it to the page
-        let collectTodo = document.getElementById('collect-todo')
-        let collectedTodo = collectTodo.value;
+        // //ASSIGNMENT take whats inside textbox and add display it to the page
+        // let collectTodo = document.getElementById('collect-todo')
+        // let collectedTodo = collectTodo.value;
 
 
-        function displayMytodo() {
-            let todolist = document.createElement('div');
-            todolist.innerText = collectedTodo;
-            document.body.appendChild(todolist);
+        // function displayMytodo() {
+        //     let todolist = document.createElement('div');
+        //     todolist.innerText = collectedTodo;
+        //     document.body.appendChild(todolist);
 
-            // let element = document.createElement('div');
-            // element.innerText = todoTitle;
-            // document.body.appendChild(element);
+        //     // let element = document.createElement('div');
+        //     // element.innerText = todoTitle;
+        //     // document.body.appendChild(element);
 
-        }
+        // }
         
     </script>
 </body>
