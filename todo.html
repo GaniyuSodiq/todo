@@ -21,9 +21,9 @@
     <script>
 
         const todos = [
-           {title:'Get groceries', dueDate: '2023-06-01'}, 
-           {title:'Wash Car', dueDate: '2023-06-02'}, 
-           {title:'Make Dinner', dueDate: '2023-06-03'}
+           {title:'Get groceries', dueDate: '2023-06-01', id: 'id1'}, 
+           {title:'Wash Car', dueDate: '2023-06-02', id: 'id2'}, 
+           {title:'Make Dinner', dueDate: '2023-06-03', id: 'id3'}
         ];
 
         
@@ -38,19 +38,41 @@
             const datePicker = document.getElementById('date-picker');
             const dueDate = datePicker.value;
 
+            const id = new Date().getTime();
+
             todos.push({
                 title:todotitle, 
-                dueDate:dueDate
+                dueDate:dueDate,
+                id: id
             });
             render();
+        }
+
+        function deleteTodo(event){
+            const deleteButton = event.target;
+            const idToDelete = deleteButton.id;
+
+            todos.filter(function(todo){
+                
+            })
         }
 
         function render(){
                 //reset our list
                 document.getElementById('todo-list').innerHTML = '';
+
                 todos.forEach(function (todoTitle) {
+
                 const element = document.createElement('div');
                 element.innerText = todoTitle.title + ' ' + todoTitle.dueDate;
+                
+                const deleteButton = document.createElement('button');
+                deleteButton.innerText = 'Delete';
+                deleteButton.style = 'margin-left : 12px';
+                deleteButton.onclick = deleteTodo;
+                deleteButton.id = todoTitle.id;
+                element.appendChild(deleteButton);
+
                 const todoList = document.getElementById('todo-list')
                 todoList.appendChild(element);
             })
